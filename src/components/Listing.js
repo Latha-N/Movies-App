@@ -41,7 +41,7 @@ export default class Listing extends React.Component{
        if (this.state.category !== this.props.match.params.category) {
           const category = this.props.match.params.category ? this.props.match.params.category : "popular"
 
-          axios.get(`https://api.themoviedb.org/3/movie/${category}?api_key=06b4380c36f00a2d78cd89c4b56c0512`)
+          axios.get(`https://api.themoviedb.org/3/movie/${category}?api_key=123456`)
           .then(response=>{
               const movies=response.data.results 
             //   console.log('movies',movies)
