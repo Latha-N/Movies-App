@@ -1,16 +1,23 @@
 import React from 'react'
 import {Link, BrowserRouter, Route} from 'react-router-dom'
+import Listing from './components/Listing'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ShowMovie from './components/ShowMovie'
 
-import Listing from '../src/components/List'
 
 function App(props){
  return(
      <BrowserRouter>
-        <div>
-            <h1>hello</h1>
-            <Link to="/movies">movies</Link>
+        <div className="container">
+            <h2>Movies Database App</h2>
+            <Link to="/popular">Popular</Link> ||  
+             <Link to="/now_playing">Now playing</Link> || 
+            <Link to="/upcoming">Up coming</Link>
 
-            <Route path="/movies" component={Listing}/>
+            <Route path="/" component={Listing} exact={true}/>
+            <Route path="/movie/:id" component={ShowMovie} exact={true}/>
+            <Route path="/:category" component={Listing} exact={true}/>
+
 
         </div>
      </BrowserRouter>
